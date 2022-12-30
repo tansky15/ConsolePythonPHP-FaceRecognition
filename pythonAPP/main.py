@@ -25,6 +25,8 @@ getip = get_location(ipAdress)
 myLocalisation = GeoMap(getip.get("latitude"),
                         getip.get("longitude"))
 
+
+
 # set the box
 myBox = Camera("camera chambre personnel", ipAdress, myLocalisation)
 

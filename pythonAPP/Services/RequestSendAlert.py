@@ -8,3 +8,4 @@ def EnvoyerSignalement(nom_complet, nom_camera, ip, geomap):
     res = requests.post(
         url, params={"nom_du_suspect": nom_complet, "ip": ip, "longitude": geomap._longitude, "latitude": geomap._latitude, "nom_camera": nom_camera})
     print(res.text)
+

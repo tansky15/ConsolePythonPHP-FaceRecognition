@@ -14,3 +14,4 @@ class Camera:
     def SignalerSuspect(self, nom_complet):
         EnvoyerSignalement(
             nom_complet, self._nom_camera, self._ip, self._geomap)
+
