@@ -1,4 +1,5 @@
 from Services.RequestSendAlert import EnvoyerSignalement
+import requests
 
 
 class Camera:

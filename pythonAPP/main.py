@@ -7,15 +7,24 @@ from datetime import datetime
 from gtts import gTTS
 import os
 import socket
+import requests
 
+from Domain.LocalizedByIP import *
 from Domain.Camera import *
 from Domain.GeoMap import *
 
-# get the geo-localisation
-myLocalisation = GeoMap("2.8.9.4", "3.4.2.4")
+import IP2Location
+
+
 # get the ip adress
 hostname = socket.gethostname()
 ipAdress = socket.gethostbyname(hostname)
+
+# get the geo-localisation
+getip = get_location(ipAdress)
+myLocalisation = GeoMap(getip.get("latitude"),
+                        getip.get("longitude"))
+
 # set the box
 myBox = Camera("camera chambre personnel", ipAdress, myLocalisation)
 
